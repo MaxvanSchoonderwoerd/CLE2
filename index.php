@@ -14,15 +14,30 @@ echo "test3";
     <title>Login</title>
 </head>
 <link rel="stylesheet" href="style.css">
-<nav>
 
-</nav>
 <body>
-
 <main>
-<section>
-
-</section>
+    <section>
+        <div>
+            <div>
+                <h1>Langetermijnplanning</h1>
+            </div>
+            <div>
+                <h1>Login</h1>
+                <div>
+                    <label for="name">Naam:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div>
+                    <label for="password">Wachtwoord:</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <div>
+                    <button type="submit">Versturen </button>
+                </div>
+            </div>
+        </div>
+    </section>
 </main>
 </body>
 </html>
