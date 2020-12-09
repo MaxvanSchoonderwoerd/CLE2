@@ -24,7 +24,6 @@
                 <h1>Hallo, wil je inloggen?</h1>
             </div>
             <div>
-<!--                <h1>Login</h1>-->
                 <div>
                     <label for="name">Naam:</label>
                     <input type="text" id="name" name="name" required>
@@ -40,6 +39,9 @@
         </div>
 
     </section>
+    <right>
+        <img src="source/CLE2_Logo.png">
+    </right>
 </main>
 
 </body>
