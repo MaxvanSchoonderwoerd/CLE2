@@ -1,6 +1,5 @@
 <?php
 
-echo "test3";
 
 ?>
 <!DOCTYPE html>
@@ -13,17 +12,19 @@ echo "test3";
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Login</title>
 </head>
-<link rel="stylesheet" href="style.css">
-
+<link rel="stylesheet" href="css/style.css">
+<header>
+    <h1 class="title">Langetermijnplanning</h1>
+</header>
 <body>
 <main>
     <section>
         <div>
             <div>
-                <h1>Langetermijnplanning</h1>
+                <h1>Hallo, wil je inloggen?</h1>
             </div>
             <div>
-                <h1>Login</h1>
+<!--                <h1>Login</h1>-->
                 <div>
                     <label for="name">Naam:</label>
                     <input type="text" id="name" name="name" required>
@@ -33,11 +34,13 @@ echo "test3";
                     <input type="password" id="password" name="password" required>
                 </div>
                 <div>
-                    <button type="submit">Versturen </button>
+                    <button type="submit">Versturen</button>
                 </div>
             </div>
         </div>
+
     </section>
 </main>
+
 </body>
 </html>
