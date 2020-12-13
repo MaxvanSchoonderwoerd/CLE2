@@ -123,6 +123,7 @@ nav {
     font-weight: bolder;
     font-size: 1.2em;
     width: 100vw;
+    height: 18vh;
     justify-content: flex-start;
     background-color: #ad8836;
     border-radius: 50px;
