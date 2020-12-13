@@ -15,19 +15,18 @@
 </head>
 <link rel="stylesheet" href="css/style.css">
 <header>
-    <!--    <h1 class="title">Planner</h1>-->
     <nav>
-        <div class="navButton">
+        <div>
             <form method="post" action="home.php">
                 <button class="navButton" type="submit">Home</button>
             </form>
         </div>
-        <div class="navButton">
+        <div>
             <form method="post" action="rooster.php">
                 <button class="navButton" type="submit">Rooster</button>
             </form>
         </div>
-        <div class="navButton">
+        <div>
             <form method="post" action="planner.php">
                 <button class="navButton" type="submit">Planner</button>
             </form>

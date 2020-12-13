@@ -37,11 +37,14 @@
                     <button type="submit">Versturen</button>
                 </div>
             </div>
+            <div>
+                <a href="home.php">Shortcut to home</a>
+            </div>
         </div>
     </section>
-    <right>
-        <img src="source/CLE2_Logo.png">
-    </right>
 </main>
+<right>
+    <img src="source/CLE2_Logo.png">
+</right>
 </body>
 </html>
