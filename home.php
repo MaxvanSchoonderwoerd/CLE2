@@ -15,7 +15,23 @@
 </head>
 <link rel="stylesheet" href="css/style.css">
 <header>
-    <h1 class="title">Home</h1>
+    <nav>
+        <div class="navButton">
+            <form method="post" action="home.php">
+                <button class="navButton" type="submit">Home</button>
+            </form>
+        </div>
+        <div class="navButton">
+            <form method="post" action="rooster.php">
+                <button class="navButton" type="submit">Rooster</button>
+            </form>
+        </div>
+        <div class="navButton">
+            <form method="post" action="planner.php">
+                <button class="navButton" type="submit">Planner</button>
+            </form>
+        </div>
+    </nav>
 </header>
 <body>
 <main>
@@ -26,16 +42,7 @@
             </div>
             <div>
                 <div>
-<!--                    <button type="button">Rooster</button>-->
-                    <form method="get" action="CLE2/rooster.php">
-                        <button type="submit">Rooster</button>
-                    </form>
-                </div>
-                <div>
-<!--                    <button type="button">Planner</button>-->
-                    <form method="post" action="planner.php">
-                        <button type="submit">Planner</button>
-                    </form>
+                   <p>Hier komt tekst te staan over info over de website, hoe je het gebruikt, waarom, voor wie en nog meer. Hier komt tekst te staan over info over de website, hoe je het gebruikt, waarom, voor wie en nog meer. Hier komt tekst te staan over info over de website, hoe je het gebruikt, waarom, voor wie en nog meer. Hier komt tekst te staan over info over de website, hoe je het gebruikt, waarom, voor wie en nog meer. Hier komt tekst te staan over info over de website, hoe je het gebruikt, waarom, voor wie en nog meer. Hier komt tekst te staan over info over de website, hoe je het gebruikt, waarom, voor wie en nog meer. </p>
                 </div>
             </div>
         </div>

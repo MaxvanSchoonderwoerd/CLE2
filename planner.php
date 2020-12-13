@@ -17,9 +17,19 @@
 <header>
     <!--    <h1 class="title">Planner</h1>-->
     <nav>
-        <div>
+        <div class="navButton">
             <form method="post" action="home.php">
-                <button type="submit">Home</button>
+                <button class="navButton" type="submit">Home</button>
+            </form>
+        </div>
+        <div class="navButton">
+            <form method="post" action="rooster.php">
+                <button class="navButton" type="submit">Rooster</button>
+            </form>
+        </div>
+        <div class="navButton">
+            <form method="post" action="planner.php">
+                <button class="navButton" type="submit">Planner</button>
             </form>
         </div>
     </nav>
@@ -76,10 +86,9 @@
         </div>
 
     </section>
-    <right>
-        <img src="source/CLE2_Logo.png">
-    </right>
 </main>
-
+<right>
+    <img src="source/CLE2_Logo.png">
+</right>
 </body>
 </html>

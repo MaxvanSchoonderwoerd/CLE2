@@ -38,12 +38,10 @@
                 </div>
             </div>
         </div>
-
     </section>
     <right>
         <img src="source/CLE2_Logo.png">
     </right>
 </main>
-
 </body>
 </html>
