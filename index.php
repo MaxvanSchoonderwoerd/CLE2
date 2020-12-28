@@ -18,33 +18,39 @@
     <h1 class="title">Langetermijnplanning</h1>
 </header>
 <body>
-<main>
-    <section>
-        <div>
-            <div>
-                <h1>Hallo, wil je inloggen?</h1>
-            </div>
+    <main>
+        <section>
             <div>
                 <div>
-                    <label for="name">Naam:</label>
-                    <input type="text" id="name" name="name" required>
+                    <h1>Hallo, wil je inloggen?</h1>
                 </div>
                 <div>
-                    <label for="password">Wachtwoord:</label>
-                    <input type="password" id="password" name="password" required>
+                    <div>
+                        <label for="name">Naam:</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div>
+                        <label for="password">Wachtwoord:</label>
+                        <input type="password" id="password" name="password" required>
+                    </div>
+                    <div>
+                        <button type="submit">Versturen</button>
+                    </div>
                 </div>
                 <div>
-                    <button type="submit">Versturen</button>
+                    <a href="home.php">Shortcut to home</a>
                 </div>
             </div>
-            <div>
-                <a href="home.php">Shortcut to home</a>
-            </div>
-        </div>
-    </section>
-</main>
-<right>
-    <img src="source/CLE2_Logo.png">
-</right>
+        </section>
+    </main>
+
+    <right>
+        <img src="source/CLE2_Logo.png">
+    </right>
 </body>
+<footer>
+    <div>
+        <h1>test</h1>
+    </div>
+</footer>
 </html>

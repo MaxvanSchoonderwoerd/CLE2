@@ -17,6 +17,11 @@
 <header>
     <nav>
         <div>
+            <form method="post" action="index.php">
+                <button class="navButton" type="submit">Logout</button>
+            </form>
+        </div>
+        <div>
             <form method="post" action="home.php">
                 <button class="navButton" type="submit">Home</button>
             </form>
@@ -42,16 +47,24 @@
             </div>
             <div>
                 <div>
-                   <p>Hier komt tekst te staan over info over de website, hoe je het gebruikt, waarom, voor wie en nog meer. Hier komt tekst te staan over info over de website, hoe je het gebruikt, waarom, voor wie en nog meer. Hier komt tekst te staan over info over de website, hoe je het gebruikt, waarom, voor wie en nog meer. Hier komt tekst te staan over info over de website, hoe je het gebruikt, waarom, voor wie en nog meer. Hier komt tekst te staan over info over de website, hoe je het gebruikt, waarom, voor wie en nog meer. Hier komt tekst te staan over info over de website, hoe je het gebruikt, waarom, voor wie en nog meer. </p>
+                    <p>Hier komt tekst te staan over info over de website, hoe je het gebruikt, waarom, voor wie en nog
+                        meer. Hier komt tekst te staan over info over de website, hoe je het gebruikt, waarom, voor wie
+                        en nog meer. Hier komt tekst te staan over info over de website, hoe je het gebruikt, waarom,
+                        voor wie en nog meer. Hier komt tekst te staan over info over de website, hoe je het gebruikt,
+                        waarom, voor wie en nog meer. Hier komt tekst te staan over info over de website, hoe je het
+                        gebruikt, waarom, voor wie en nog meer. Hier komt tekst te staan over info over de website, hoe
+                        je het gebruikt, waarom, voor wie en nog meer. </p>
                 </div>
             </div>
         </div>
 
     </section>
-    <right>
-        <img src="source/CLE2_Logo.png">
-    </right>
 </main>
-
+<right>
+    <img src="source/CLE2_Logo.png">
+</right>
 </body>
 </html>
+<footer>
+    test
+</footer>

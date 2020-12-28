@@ -17,6 +17,11 @@
 <header>
     <nav>
         <div>
+            <form method="post" action="index.php">
+                <button class="navButton" type="submit">Logout</button>
+            </form>
+        </div>
+        <div>
             <form method="post" action="home.php">
                 <button class="navButton" type="submit">Home</button>
             </form>
