@@ -1,6 +1,43 @@
 <?php
+require_once 'database.php';
 
+function redirect($url, $statusCode = 303)
+{
+    header('Location: ' . $url, true, $statusCode);
+    die();
+}
 
+if (!empty($_POST)) {
+
+    if (isset($db)) {
+
+        //get the name from the input of the user
+        $name = mysqli_escape_string($db, $_POST['name']);
+
+        //get the password from the input of the user
+        $password = mysqli_escape_string($db, $_POST['password']);
+
+        //look through the database for the user's inputted "name" and get its corresponding hashed password
+        $sql = "SELECT user_password FROM inlogGegevens WHERE user_name = '$name'";
+
+        $result = $db->query($sql);
+        $hash = $result->fetch_assoc();
+
+        //check if the user's inputted password matches the hashed password from the database
+        $valid = password_verify($password, $hash['user_password']);
+
+        //if it matches
+        if ($valid == true) {
+            //redirect to home.php
+            echo 'password correct';
+            redirect("home.php");
+        } else {
+            //show the user it put in the wrong password
+            echo 'password incorrect';
+//        header("Refresh:1");
+        }
+    }
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -18,35 +55,36 @@
     <h1 class="title">Langetermijnplanning</h1>
 </header>
 <body>
-    <main>
-        <section>
-            <div>
+<main>
+    <section>
+        <div>
+            <h1>Hallo, wil je inloggen?</h1>
+        </div>
+        <div>
+            <form method="post">
                 <div>
-                    <h1>Hallo, wil je inloggen?</h1>
+                    <label for="name">Naam:</label>
+                    <input type="text" id="name" name="name" required>
                 </div>
                 <div>
-                    <div>
-                        <label for="name">Naam:</label>
-                        <input type="text" id="name" name="name" required>
-                    </div>
-                    <div>
-                        <label for="password">Wachtwoord:</label>
-                        <input type="password" id="password" name="password" required>
-                    </div>
-                    <div>
-                        <button type="submit">Versturen</button>
-                    </div>
+                    <label for="password">Wachtwoord:</label>
+                    <input type="password" id="password" name="password" required>
                 </div>
                 <div>
-                    <a href="home.php">Shortcut to home</a>
+                    <button type="submit">Versturen</button>
                 </div>
-            </div>
-        </section>
-    </main>
+            </form>
+        </div>
+        <div>
+            <a href="home.php">Shortcut to home</a>
+            <a href="createaccount.php">Nog geen account?</a>
+        </div>
+    </section>
+</main>
 
-    <right>
-        <img src="source/CLE2_Logo.png">
-    </right>
+<right>
+    <img src="source/CLE2_Logo.png" alt="logo">
+</right>
 </body>
 <footer>
     <div>

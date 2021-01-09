@@ -1,5 +1,5 @@
 <?php
-
+require_once 'database.php';
 
 ?>
 <!DOCTYPE html>
@@ -46,44 +46,44 @@
                 <h1>Vul hier de gegevens in</h1>
             </div>
             <div>
-                <div>
+                <div class="planner">
                     <label for="name">Naam:</label>
                     <input type="text" id="name" name="name" required>
                     </form>
                 </div>
-                <div>
+                <div class="planner">
                     <label for="date">Geboorte datum:</label>
                     <input type="date" id="date" name="date" required>
                 </div>
-                <div>
+                <div class="planner">
                     <label for="monday">Maandag: </label>
                     <input type="checkbox" id="monday" name="monday">
                 </div>
-                <div>
+                <div class="planner">
                     <label for="tuesday">Dinsdag: </label>
                     <input type="checkbox" id="tuesday" name="tuesday">
                 </div>
-                <div>
+                <div class="planner">
                     <label for="wednesday">Woensdag: </label>
                     <input type="checkbox" id="wednesday" name="wednesday">
                 </div>
-                <div>
+                <div class="planner">
                     <label for="thursday">Donderdag: </label>
                     <input type="checkbox" id="thursday" name="thursday">
                 </div>
-                <div>
+                <div class="planner">
                     <label for="friday">Vrijdag: </label>
                     <input type="checkbox" id="friday" name="friday">
                 </div>
-                <div>
+                <div class="planner">
                     <label for="saturday">Zaterdag: </label>
                     <input type="checkbox" id="saturday" name="saturday">
                 </div>
-                <div>
+                <div class="planner">
                     <label for="sunday">Zondag: </label>
                     <input type="checkbox" id="sunday" name="sunday">
                 </div>
-                <div>
+                <div class="planner">
                     <button type="submit">Plannen</button>
                 </div>
             </div>
