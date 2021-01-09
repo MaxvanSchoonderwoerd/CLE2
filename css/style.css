@@ -188,9 +188,10 @@ footer div {
     position: center;
     vertical-align: center;
     horiz-align: center;
+    text-align: center;
     padding: 10px;
     font-style: italic;
-    font-size: 1.2em;
+    font-size: 0.7em;
     color: grey;
     overflow-wrap: break-word;
 }
