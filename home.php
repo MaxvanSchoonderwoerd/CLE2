@@ -65,7 +65,9 @@
     <img src="source/CLE2_Logo.png">
 </right>
 </body>
-</html>
 <footer>
-    test
+    <div>
+        <h1>In development.</h1>
+    </div>
 </footer>
+</html>

@@ -95,4 +95,9 @@ require_once 'database.php';
     <img src="source/CLE2_Logo.png">
 </right>
 </body>
+<footer>
+    <div>
+        <h1> In development, gebruik geen echte gegevens.</h1>
+    </div>
+</footer>
 </html>

@@ -38,4 +38,9 @@ require_once 'database.php';
         </div>
     </nav>
 </header>
-<body>\
+<footer>
+    <div>
+        <h1>Hier komt nog een rooster</h1>
+    </div>
+</footer>
+<body>
