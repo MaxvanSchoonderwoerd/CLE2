@@ -9,35 +9,51 @@ function redirect($url, $statusCode = 303)
 
 if (!empty($_POST)) {
 
-    if (isset($db)) {
+    if ($_POST['name'] == !null && $_POST['password'] == !null) {
 
-        //get the name from the input of the user
-        $name = mysqli_escape_string($db, $_POST['name']);
+        if (isset($db)) {
 
-        //get the password from the input of the user
-        $password = mysqli_escape_string($db, $_POST['password']);
+            //get the name from the input of the user
+            $name = mysqli_escape_string($db, $_POST['name']);
 
-        //look through the database for the user's inputted "name" and get its corresponding hashed password
-        $sql = "SELECT user_password FROM inlogGegevens WHERE user_name = '$name'";
+            //get the password from the input of the user
+            $password = mysqli_escape_string($db, $_POST['password']);
 
-        $result = $db->query($sql);
-        $hash = $result->fetch_assoc();
+            //look through the database for the user's inputted "name" and get its corresponding hashed password
+            $sql = "SELECT user_password FROM inlogGegevens WHERE user_name = '$name'";
 
-        //check if the user's inputted password matches the hashed password from the database
-        $valid = password_verify($password, $hash['user_password']);
+            $result = $db->query($sql);
+            $hash = $result->fetch_assoc();
 
-        //if it matches
-        if ($valid == true) {
-            //redirect to home.php
-            echo 'password correct';
-            redirect("home.php");
+            //check if the user's inputted password matches the hashed password from the database
+            $valid = password_verify($password, $hash['user_password']);
+
+            //if it matches
+            if ($valid == true) {
+
+                echo 'password correct';
+
+                //start the session
+                session_start();
+                $_SESSION["loggedIn"] = true;
+                $_SESSION["userName"] = $_POST['name'];
+
+                //clear the post
+                $_POST = null;
+
+                //send to home.php
+                redirect("home.php");
+
+            } else {
+
+                //show password is incorrect
+                echo 'password incorrect';
+            }
         } else {
-            //show the user it put in the wrong password
-            echo 'password incorrect';
-//        header("Refresh:1");
         }
     }
 }
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -71,12 +87,11 @@ if (!empty($_POST)) {
                     <input type="password" id="password" name="password" required>
                 </div>
                 <div>
-                    <button type="submit">Versturen</button>
+                    <button type="submit" id="logIn">Inloggen</button>
                 </div>
             </form>
         </div>
         <div>
-            <a href="home.php">Shortcut to home</a>
             <a href="createaccount.php">Nog geen account?</a>
         </div>
     </section>
@@ -86,9 +101,10 @@ if (!empty($_POST)) {
     <img src="source/CLE2_Logo.png" alt="logo">
 </right>
 </body>
+<script src="loginScript.js"></script>
 <footer>
     <div>
-        <h1>test</h1>
+        <h1>In development</h1>
     </div>
 </footer>
 </html>

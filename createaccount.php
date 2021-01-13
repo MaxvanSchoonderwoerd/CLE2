@@ -21,7 +21,7 @@ if (!$adminLoggedIn && !empty($_GET['adminName']) && !empty($_GET['adminPassword
         $adminName = mysqli_escape_string($db, $_GET['adminName']);
 
         //get the admin password from the input of the user
-        $adminPassword = mysqli_escape_string($db, $_GET['adminPassword']);
+        $aPassword = mysqli_escape_string($db, $_GET['adminPassword']);
 
         //look through the database for the user's inputted "admin name" and get its corresponding password
         $sql = "SELECT admin_password FROM adminGegevens WHERE admin_name = '$adminName'";
@@ -33,7 +33,9 @@ if (!$adminLoggedIn && !empty($_GET['adminName']) && !empty($_GET['adminPassword
         //so if its null the inputted name cant be found in the database and thus the password or name was incorrect
 
         //if the queried password is not empty and it matches the inputted password
-        if ($hash != null && $adminPassword == $hash['admin_password']) {
+        $valid = password_verify($aPassword, $hash['admin_password']);
+//        if ($hash != null && $adminPassword == $hash['admin_password']) {
+        if ($valid) {
 
             //the password was correct
             echo 'password correct';
@@ -128,6 +130,11 @@ if ($adminLoggedIn && !empty($_POST['name']) && !empty($_POST['password'])) {
                     </div>
                 </form>
             </div>
+            <div>
+                <p>
+                    Bent u geen admin en kunt u daarom geen account voor uw zelf aanmaken? <br>  <a href="createaccount.php">Neem dan contact op met een admin</a>
+                </p>
+            </div>
         </div>
         <div style="display: <?php echo $userDisplay ?>">
             <div>
@@ -161,6 +168,7 @@ if ($adminLoggedIn && !empty($_POST['name']) && !empty($_POST['password'])) {
     <img src="source/CLE2_Logo.png">
 </right>
 </body>
+
 <footer>
     <div>
         <h1> In development, gebruik geen echte wachtwoorden.</h1>

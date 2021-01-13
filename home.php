@@ -1,5 +1,16 @@
 <?php
 
+function redirect($url, $statusCode = 303)
+{
+    header('Location: ' . $url, true, $statusCode);
+    die();
+}
+
+session_start();
+if ($_SESSION['loggedIn'] == false) {
+    echo "Please log in first to see this page.";
+    redirect("index.php");
+}
 
 
 ?>
@@ -18,8 +29,8 @@
 <header>
     <nav>
         <div>
-            <form method="post" action="index.php">
-                <button class="navButton" type="submit">Logout</button>
+            <form method="" action="logout.php">
+                <button class="navButton" type="submit" id="logOut">Logout</button>
             </form>
         </div>
         <div>
@@ -65,6 +76,7 @@
     <img src="source/CLE2_Logo.png">
 </right>
 </body>
+<script src="loginScript.js"></script>
 <footer>
     <div>
         <h1>In development.</h1>
