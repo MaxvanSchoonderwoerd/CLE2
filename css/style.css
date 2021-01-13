@@ -126,11 +126,11 @@ footer a {
 
 nav {
     display: flex;
-    margin: 10px 10px 0px 0px;
+    margin: 10px 10px 10px 10px;
     color: white;
     font-weight: bolder;
     font-size: 1.2em;
-    width: 100vw;
+    width: calc(100vw - 20px);
     height: 10vh;
     justify-content: flex-start;
     background-color: #34626c;
