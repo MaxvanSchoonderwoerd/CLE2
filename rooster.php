@@ -13,6 +13,9 @@ if ($_SESSION['loggedIn'] == false) {
     redirect("index.php");
 }
 
+
+$result = mysqli_query($db, "SELECT * FROM kinderGegevens");
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -50,9 +53,51 @@ if ($_SESSION['loggedIn'] == false) {
         </div>
     </nav>
 </header>
+<body>
+<table>
+    <thead>
+    <tr>
+        <th>#</th>
+        <th>Naam</th>
+        <th>Geboortedatum</th>
+        <th>Maandag</th>
+        <th>Dinsdag</th>
+        <th>Woensdag</th>
+        <th>Donderdag</th>
+        <th>Vrijdag</th>
+        <th>Zaterdag</th>
+        <th>Zondag</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tb>
+        <?php while ($row = mysqli_fetch_array($result)) {
+            ?>
+            <tr>
+                <td><?= $row['kinder_id'] ?></td>
+                <td><?= $row['kinder_name'] ?></td>
+                <td><?= $row['kinder_birth_date'] ?></td>
+                <td class="icon"><?= $row['kinder_days_monday'] ?></td>
+                <td class="icon"><?= $row['kinder_days_tuesday'] ?></td>
+                <td class="icon"><?= $row['kinder_days_wednesday'] ?></td>
+                <td class="icon"><?= $row['kinder_days_thursday'] ?></td>
+                <td class="icon"><?= $row['kinder_days_friday'] ?></td>
+                <td class="icon"><?= $row['kinder_days_saturday'] ?></td>
+                <td class="icon"><?= $row['kinder_days_sunday'] ?></td>
+            </tr>
+            <?php ;
+        } ?>
+    </tb>
+    </tbody>
+    <tfoot>
+    <tr>
+        <td colspan="10"></td>
+    </tr>
+    </tfoot>
+</table>
+</body>
 <footer>
     <div>
         <h1>Hier komt nog een rooster</h1>
     </div>
 </footer>
-<body>
