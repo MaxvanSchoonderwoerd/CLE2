@@ -73,7 +73,7 @@ if ($_SESSION['loggedIn'] == false) {
     </section>
 </main>
 <right>
-    <img src="source/CLE2_Logo.png">
+    <img src="source/CLE2_Logo.png" alt="logo" class="logo">
 </right>
 </body>
 <script src="loginScript.js"></script>

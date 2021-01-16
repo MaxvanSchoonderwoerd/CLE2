@@ -1,11 +1,19 @@
 <?php
 require_once 'database.php';
 
-function redirect($url, $statusCode = 303)
-{
-    header('Location: ' . $url, true, $statusCode);
-    die();
-}
+//function redirect($url, $statusCode = 303)
+//{
+//    header('Location: ' . $url, true, $statusCode);
+//    die();
+//}
+
+$mondayicon = "icon_checkmark.png";
+$tuesdayicon = "icon_checkmark.png";
+$wednesdayicon = "icon_checkmark.png";
+$thursdayicon = "icon_checkmark.png";
+$fridayicon = "icon_checkmark.png";
+$saturdayicon = "icon_checkmark.png";
+$sundayicon = "icon_checkmark.png";
 
 session_start();
 if ($_SESSION['loggedIn'] == false) {
@@ -72,18 +80,56 @@ $result = mysqli_query($db, "SELECT * FROM kinderGegevens");
     <tbody>
     <tb>
         <?php while ($row = mysqli_fetch_array($result)) {
+            if ($row['kinder_days_monday'] == 1) {
+                $mondayicon = "icon_checkmark.png";
+            } else {
+                $mondayicon = "icon_cross.png";
+            }
+
+            if ($row['kinder_days_tuesday'] == 1) {
+                $tuesdayicon = "icon_checkmark.png";
+            } else {
+                $tuesdayicon = "icon_cross.png";
+            }
+
+            if ($row['kinder_days_wednesday'] == 1) {
+                $wednesdayicon = "icon_checkmark.png";
+            } else {
+                $wednesdayicon = "icon_cross.png";
+            }
+            if ($row['kinder_days_thursday'] == 1) {
+                $thursdayicon = "icon_checkmark.png";
+            } else {
+                $thursdayicon = "icon_cross.png";
+            }
+            if ($row['kinder_days_friday'] == 1) {
+                $fridayicon = "icon_checkmark.png";
+            } else {
+                $fridayicon = "icon_cross.png";
+            }
+            if ($row['kinder_days_saturday'] == 1) {
+                $saturdayicon = "icon_checkmark.png";
+            } else {
+                $saturdayicon = "icon_cross.png";
+            }
+            if ($row['kinder_days_sunday'] == 1) {
+                $sundayicon = "icon_checkmark.png";
+            } else {
+                $sundayicon = "icon_cross.png";
+            }
             ?>
             <tr>
                 <td><?= $row['kinder_id'] ?></td>
                 <td><?= $row['kinder_name'] ?></td>
                 <td><?= $row['kinder_birth_date'] ?></td>
-                <td class="icon"><?= $row['kinder_days_monday'] ?></td>
-                <td class="icon"><?= $row['kinder_days_tuesday'] ?></td>
-                <td class="icon"><?= $row['kinder_days_wednesday'] ?></td>
-                <td class="icon"><?= $row['kinder_days_thursday'] ?></td>
-                <td class="icon"><?= $row['kinder_days_friday'] ?></td>
-                <td class="icon"><?= $row['kinder_days_saturday'] ?></td>
-                <td class="icon"><?= $row['kinder_days_sunday'] ?></td>
+                <td class="icon"><img src="source/<?= $mondayicon ?>" width="50" height="50" <<?= $row['kinder_days_monday'] ?></td>
+                <td class="icon"><img src="source/<?= $tuesdayicon ?>" width="50" height="50" <<?= $row['kinder_days_tuesday'] ?></td>
+                <td class="icon"><img src="source/<?= $wednesdayicon ?>" width="50" height="50" <<?= $row['kinder_days_wednesday'] ?></td>
+                <td class="icon"><img src="source/<?= $thursdayicon ?>" width="50" height="50" <<?= $row['kinder_days_thursday'] ?></td>
+                <td class="icon"><img src="source/<?= $fridayicon ?>" width="50" height="50" <<?= $row['kinder_days_friday'] ?></td>
+                <td class="icon"><img src="source/<?= $saturdayicon ?>" width="50" height="50" <<?= $row['kinder_days_saturday'] ?></td>
+                <td class="icon"><img src="source/<?= $sundayicon ?>" width="50" height="50" <<?= $row['kinder_days_sunday'] ?></td>
+                <td><a href="deleteRow.php?kinderid=<?=$row["kinder_id"]?>">Delete</a></td>
             </tr>
             <?php ;
         } ?>

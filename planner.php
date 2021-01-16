@@ -4,6 +4,7 @@ require_once 'database.php';
 $sec = 1;
 $page = "planner.php";
 
+
 function redirect($url, $statusCode = 303)
 {
     header('Location: ' . $url, true, $statusCode);
@@ -30,54 +31,69 @@ if (isset($db)) {
 
         if (!isset($_POST['monday'])) {
             $monday = 0;
+
+
         } else {
             $monday = 1;
+
         }
 
 
         if (!isset($_POST['tuesday'])) {
             $tuesday = 0;
+
         } else {
             $tuesday = 1;
+
         }
 
 
         if (!isset($_POST['wednesday'])) {
             $wednesday = 0;
+
         } else {
             $wednesday = 1;
+
         }
 
 
         if (!isset($_POST['thursday'])) {
             $thursday = 0;
+
         } else {
             $thursday = 1;
+
         }
 
 
         if (!isset($_POST['friday'])) {
             $friday = 0;
+
         } else {
             $friday = 1;
+
         }
 
 
         if (!isset($_POST['saturday'])) {
             $saturday = 0;
+
         } else {
             $saturday = 1;
+
         }
 
 
         if (!isset($_POST['sunday'])) {
             $sunday = 0;
+
         } else {
             $sunday = 1;
+
         }
 
 
-        //create a variable with the myqli code to put the name and password in the database
+        //create a variable with the mysqli code to put the name and password in the database
         $sql = "INSERT INTO kinderGegevens (kinder_name, kinder_birth_date, kinder_days_monday, kinder_days_tuesday, kinder_days_wednesday, kinder_days_thursday, kinder_days_friday, kinder_days_saturday, kinder_days_sunday) VALUES ('$name', '$date', '$monday', '$tuesday', '$wednesday', '$thursday', '$friday', '$saturday', '$sunday')";
 
 
@@ -180,7 +196,7 @@ if (isset($db)) {
     </section>
 </main>
 <right>
-    <img src="source/CLE2_Logo.png">
+    <img src="source/CLE2_Logo.png" alt="logo" class="logo">
 </right>
 </body>
 <footer>

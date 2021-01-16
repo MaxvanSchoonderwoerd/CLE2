@@ -165,7 +165,7 @@ if ($adminLoggedIn && !empty($_POST['name']) && !empty($_POST['password'])) {
 </main>
 
 <right>
-    <img src="source/CLE2_Logo.png">
+    <img src="source/CLE2_Logo.png" alt="logo" class="logo">
 </right>
 </body>
 
