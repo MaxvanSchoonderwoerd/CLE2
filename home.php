@@ -48,6 +48,11 @@ if ($_SESSION['loggedIn'] == false) {
                 <button class="navButton" type="submit">Planner</button>
             </form>
         </div>
+        <div>
+            <form method="post" action="user.php">
+                <button class="navButton"> <?= htmlentities($_SESSION['userName'] )?> </button>
+            </form>
+        </div>
     </nav>
 </header>
 <body>
@@ -55,11 +60,12 @@ if ($_SESSION['loggedIn'] == false) {
     <section>
         <div>
             <div>
-                <h1>Waar wil je naartoe?</h1>
+                <h1>Waar wil je naartoe, <?= htmlentities($_SESSION['userName'] )?></h1>
             </div>
             <div>
                 <div>
-                    <p>Hier komt tekst te staan over info over de website, hoe je het gebruikt, waarom, voor wie en nog
+                    <p> Welkom <?= htmlentities($_SESSION['userName'] )?>! <br>
+                        Hier komt tekst te staan over info over de website, hoe je het gebruikt, waarom, voor wie en nog
                         meer. Hier komt tekst te staan over info over de website, hoe je het gebruikt, waarom, voor wie
                         en nog meer. Hier komt tekst te staan over info over de website, hoe je het gebruikt, waarom,
                         voor wie en nog meer. Hier komt tekst te staan over info over de website, hoe je het gebruikt,

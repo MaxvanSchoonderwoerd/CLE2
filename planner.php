@@ -22,22 +22,17 @@ if (isset($db)) {
 
     if (!empty($_POST['name']) && !empty($_POST['date'])) {
 
-
         $name = mysqli_escape_string($db, $_POST['name']);
-
 
         $date = mysqli_escape_string($db, $_POST['date']);
 
-
         if (!isset($_POST['monday'])) {
             $monday = 0;
-
 
         } else {
             $monday = 1;
 
         }
-
 
         if (!isset($_POST['tuesday'])) {
             $tuesday = 0;
@@ -47,7 +42,6 @@ if (isset($db)) {
 
         }
 
-
         if (!isset($_POST['wednesday'])) {
             $wednesday = 0;
 
@@ -55,7 +49,6 @@ if (isset($db)) {
             $wednesday = 1;
 
         }
-
 
         if (!isset($_POST['thursday'])) {
             $thursday = 0;
@@ -65,7 +58,6 @@ if (isset($db)) {
 
         }
 
-
         if (!isset($_POST['friday'])) {
             $friday = 0;
 
@@ -74,7 +66,6 @@ if (isset($db)) {
 
         }
 
-
         if (!isset($_POST['saturday'])) {
             $saturday = 0;
 
@@ -82,7 +73,6 @@ if (isset($db)) {
             $saturday = 1;
 
         }
-
 
         if (!isset($_POST['sunday'])) {
             $sunday = 0;

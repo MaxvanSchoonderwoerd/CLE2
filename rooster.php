@@ -119,17 +119,24 @@ $result = mysqli_query($db, "SELECT * FROM kinderGegevens");
             }
             ?>
             <tr>
-                <td><?= $row['kinder_id'] ?></td>
-                <td><?= $row['kinder_name'] ?></td>
-                <td><?= $row['kinder_birth_date'] ?></td>
-                <td class="icon"><img src="source/<?= $mondayicon ?>" width="50" height="50" <<?= $row['kinder_days_monday'] ?></td>
-                <td class="icon"><img src="source/<?= $tuesdayicon ?>" width="50" height="50" <<?= $row['kinder_days_tuesday'] ?></td>
-                <td class="icon"><img src="source/<?= $wednesdayicon ?>" width="50" height="50" <<?= $row['kinder_days_wednesday'] ?></td>
-                <td class="icon"><img src="source/<?= $thursdayicon ?>" width="50" height="50" <<?= $row['kinder_days_thursday'] ?></td>
-                <td class="icon"><img src="source/<?= $fridayicon ?>" width="50" height="50" <<?= $row['kinder_days_friday'] ?></td>
-                <td class="icon"><img src="source/<?= $saturdayicon ?>" width="50" height="50" <<?= $row['kinder_days_saturday'] ?></td>
-                <td class="icon"><img src="source/<?= $sundayicon ?>" width="50" height="50" <<?= $row['kinder_days_sunday'] ?></td>
-                <td><a href="deleteRow.php?kinderid=<?=$row["kinder_id"]?>">Delete</a></td>
+                <td><?= htmlentities($row['kinder_id']) ?></td>
+                <td><?= htmlentities($row['kinder_name']) ?></td>
+                <td><?= htmlentities($row['kinder_birth_date']) ?></td>
+                <td class="icon"><img src="source/<?= $mondayicon ?>" width="50" height="50"
+                    <<?= $row['kinder_days_monday'] ?></td>
+                <td class="icon"><img src="source/<?= $tuesdayicon ?>" width="50" height="50"
+                    <<?= $row['kinder_days_tuesday'] ?></td>
+                <td class="icon"><img src="source/<?= $wednesdayicon ?>" width="50" height="50"
+                    <<?= $row['kinder_days_wednesday'] ?></td>
+                <td class="icon"><img src="source/<?= $thursdayicon ?>" width="50" height="50"
+                    <<?= $row['kinder_days_thursday'] ?></td>
+                <td class="icon"><img src="source/<?= $fridayicon ?>" width="50" height="50"
+                    <<?= $row['kinder_days_friday'] ?></td>
+                <td class="icon"><img src="source/<?= $saturdayicon ?>" width="50" height="50"
+                    <<?= $row['kinder_days_saturday'] ?></td>
+                <td class="icon"><img src="source/<?= $sundayicon ?>" width="50" height="50"
+                    <<?= $row['kinder_days_sunday'] ?></td>
+                <td><a href="deleteRow.php?kinderid=<?= $row["kinder_id"] ?>">Delete</a></td>
             </tr>
             <?php ;
         } ?>
